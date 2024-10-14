@@ -1,0 +1,65 @@
+implimenting stack on array using class 
+
+
+#include<iostream>
+#include<stack>
+using namespace std;
+class Stack{
+    //data memeber
+    public:
+    int top;
+    int *arr;
+    int size;
+    Stack(int size){
+        this->size=size;
+        arr=new int[size];
+        top=-1;
+    }
+
+    void push(int e){
+        if (size-top>1){
+            top++;
+            arr[top]=e;
+        }else
+        cout<<"stack overflow"<<endl;
+    }
+    void pop(){
+        if (top>=0){
+            top--;
+        }
+        else{
+            cout<<"stack underflow"<<endl;
+        }
+    }
+    int  peek(){
+        if (top>=0){
+            return arr[top];
+        }
+    }
+    bool isempty(){
+        if(top==-1){
+            return true;
+        }
+        else
+        return false;
+
+    }   
+};
+int main(){
+    Stack st(5);
+    st.push(44);
+    st.push(22);
+    st.push(13);
+    st.push(65);
+    st.push(56);
+    
+
+    cout<<st.peek()<<endl;
+    st.pop();
+    cout<<st.peek()<<endl;
+    st.pop();
+    st.pop();
+    if(st.isempty()){
+        cout<<"stack is empty"<<endl;
+    }else cout<<"etsck is not empty mere dost"<<endl;
+}
