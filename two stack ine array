@@ -87,23 +87,22 @@ class TwoStack {
 public:
     int *arr;
     int size;
-    int temp1;int temp2;
-    // Initialize TwoStack.
-    TwoStack(int s) {
-        // Write your code here.
-        this ->size=s;
-        arr= new int[size];
-        temp1=-1;
-        temp2=size;
-    }
+    int temp1,temp2;
+    TwoStack(int s){
+        this->size=s;
+        arr=new int[size];
+        temp1=-1;temp2=size;
+
+    } 
+    
     
     // Push in stack 1.
     void push1(int num) {
-        // Write your code here.
         if (temp2-temp1>1){
             temp1++;
             arr[temp1]=num;
         }
+        // Write your code here
     }
 
     // Push in stack 2.
@@ -118,11 +117,11 @@ public:
     // Pop from stack 1 and return popped element.
     int pop1() {
         if(temp1>=0){
-            int ans= arr[temp1];
+            int ans=arr[temp1];
             temp1--;
-            return ans; 
-        }else return -1;
-        // Write your code here.
+            return ans;
+        }else
+        return -1;
     }
 
     // Pop from stack 2 and return popped element.
@@ -130,10 +129,9 @@ public:
         if(temp2<size){
             int ans=arr[temp2];
             temp2++;
-            return arr[temp2];
-        } else return -1;
+            return ans;
+        }else
+        return -1;
         // Write your code here.
     }
 };
-
-
